@@ -1,0 +1,35 @@
+footer {
+  padding: 0 20px;
+}
+
+.mainDiv {
+  width: 50%;
+  margin: auto;
+}
+.mainDiv > div {
+  display: flex;
+  line-height: 5px;
+  gap: 25px;
+  width: 90%;
+  margin: auto;
+}
+.copyRight{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+@media (max-width: 1200px) {
+  .mainDiv {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainDiv {
+    display: none;
+  }
+
+  .copyRight {
+    display: none;
+  }
+}
