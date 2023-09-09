@@ -23,7 +23,7 @@ export const Footer = () => {
       </div>{" "}
       <div className={footercss.copyRight}>
         <div>
-          <p> © 2023 Connect Me from Dipratna</p>
+          <p> © 2023 Connect Me from Dipratna Sakhare</p>
         </div>{" "}
       </div>
     </footer>
