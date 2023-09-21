@@ -26,15 +26,15 @@ export const ButtomNavbar = () => {
         { name: 'Favourites', icon: FiStar ,route:"/favourites" },
         { name: 'Settings', icon: FiSettings , route:"/settings" },
       ]
-//   const logoSrc = "https://cdn-icons-png.flaticon.com/512/5075/5075642.png";
-  return (
+  
+ return (
 
     <div className="App">
       <BottomNavigation
-        colorScheme="cyan"
-        variant="float"
+        border={"0.5px solid white"}
+        bg="cyan.400"
         showLabel="if-active"
-        color={"black"} 
+        color={"white"} 
         onChange={(newIndex) => {
             setIndex(newIndex);
           }}

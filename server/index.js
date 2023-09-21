@@ -1,30 +1,35 @@
+
 const express = require("express")
+const { connect } = require("./config/db")
 const cors = require("cors");
 
+
+const { UserAuthRoutes } = require("./routes/userAuthentication.routes");
+const { postrouter } = require("./routes/Post.routes");
+
+
+require('dotenv').config();
+
 // Routes here 
-
-
 const app = express()
-app.use(cors())
 
+app.use(cors())
 app.use(express.json());
 
-
-// user data routes here
-
-// user authentication routes and admin also 
-
-// admin dashboard routes 
+app.use("/post", postrouter)
+app.use("/user",UserAuthRoutes)
 
 
 app.get("/", (req, res) => {
-    res.send("Welcome To Backend")
+    res.send("Welcome to server of connect me")
 })
 
-app.listen(4000, async ()=> {
+
+app.listen(process.env.MONGOOSE_PORT_SERVER, async ()=> {
   try{
+      await connect
       console.log("Connected to db")
-      console.log({msg:"Your server is running at 4000 port"})
+      console.log({msg:`Your server is running at ${process.env.MONGOOSE_PORT_SERVER} port`})
   }catch(err){
       console.log("Connection failed to db")
       console.log(err)
